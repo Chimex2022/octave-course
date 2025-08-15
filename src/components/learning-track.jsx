@@ -43,9 +43,14 @@ const LearningTracks = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent flex flex-col justify-end p-6">
                 <h3 className="text-xl font-semibold">{track.title}</h3>
                 <p className="text-gray-300">{track.duration}</p>
-                <button className="mt-4 bg-white text-black px-5 py-2 rounded-full font-medium hover:scale-105 transition-transform">
+                <a
+                  href="https://bit.ly/Octave-TechTraining"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 bg-white text-black px-5 py-2 rounded-full font-medium hover:scale-105 transition-transform inline-block"
+                >
                   Apply Now
-                </button>
+                </a>
               </div>
             </div>
           ))}
