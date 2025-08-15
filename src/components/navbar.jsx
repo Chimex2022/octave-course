@@ -50,7 +50,7 @@ const Navbar = () => {
           <button
             key={index}
             onClick={() => handleScroll(item.href)}
-            className="text-gray-600 text-sm font-medium hover:text-gray-800 transition-all duration-300"
+            className="text-gray-600 text-sm font-medium hover:text-gray-800 transition-all duration-300 hover:cursor-pointer"
           >
             {item.text}
           </button>
