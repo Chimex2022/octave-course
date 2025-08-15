@@ -6,6 +6,8 @@ import LearningTracks from '../components/learning-track'
 import OurCommunity from '../components/community'
 import FounderSection from '../components/founder'
 import LearningStrategy from '../components/learning-stragegy'
+import FAQ from '../components/faqs'
+import Empower from '../components/empower'
 
 const HomePage = () => {
   return (
@@ -17,6 +19,8 @@ const HomePage = () => {
       <OurCommunity />
       <FounderSection />
       <LearningStrategy />
+      <FAQ />
+      <Empower />
     </div>
   )
 }

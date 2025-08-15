@@ -3,7 +3,7 @@ import CommunityImg from "../assets/Community.png";
 
 const OurCommunity = () => {
   return (
-    <section className="bg-black text-white py-16 px-6 lg:px-20">
+    <section id="community" className="bg-black text-white py-16 px-6 lg:px-20">
       {/* Heading & Button */}
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold">Our Community</h2>

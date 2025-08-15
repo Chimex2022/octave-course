@@ -1,34 +1,41 @@
 import { Menu, X } from "lucide-react";
 import Logo from "./logo";
-import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
   const [openItem, setOpenItem] = useState(false);
-  const menuRef = useRef(null)
+  const menuRef = useRef(null);
 
   const toggleItem = () => {
     setOpenItem(!openItem);
   };
 
   useEffect(() => {
-  const handleOutsideClick = (event) => {
-    setOpenItem(false)
-  if(menuRef.current && !menuRef.current.contains(event.target)) {
-  }
-  }
+    const handleOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenItem(false);
+      }
+    };
 
-  document.addEventListener("mousedown", handleOutsideClick)
-  return () => document.removeEventListener("mousedown", handleOutsideClick)
-  }, [])
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
+  }, []);
 
   const navLinks = [
-    { text: "Home", href: "/" },
-    { text: "Programmes", href: "/#programme" },
-    { text: "Community", href: "/#community" },
-    { text: "Testimonials", href: "/#testimonial" },
-    { text: "Blog", href: "/#blog" },
+    { text: "Home", href: "#hero" },
+    { text: "Programmes", href: "#programme" },
+    { text: "Community", href: "#community" },
+    { text: "Testimonials", href: "#testimonial" },
+    { text: "Blog", href: "#blog" },
   ];
+
+  const handleScroll = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setOpenItem(false); // close mobile menu after click
+    }
+  };
 
   return (
     <nav className="w-full h-[68px] px-6 md:px-16 py-5 bg-white border border-gray-100 flex justify-between items-center relative">
@@ -38,15 +45,15 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Nav */}
-      <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center gap-8 hover:cursor-pointer transition-all duration-300 hover:text-gray-200">
         {navLinks.map((item, index) => (
-          <Link
+          <button
             key={index}
-            to={item.href}
+            onClick={() => handleScroll(item.href)}
             className="text-gray-600 text-sm font-medium hover:text-gray-800 transition-all duration-300"
           >
             {item.text}
-          </Link>
+          </button>
         ))}
       </div>
 
@@ -66,23 +73,24 @@ const Navbar = () => {
 
       {/* Mobile Dropdown */}
       {openItem && (
-        <div ref={menuRef} className="absolute top-[68px] z-20 left-0 w-full bg-white shadow-lg p-5 flex flex-col gap-4 md:hidden">
+        <div
+          ref={menuRef}
+          className="absolute top-[68px] z-20 left-0 w-full bg-white shadow-lg p-5 flex flex-col gap-4 md:hidden"
+        >
           {navLinks.map((item, index) => (
-            <Link
+            <button
               key={index}
-              to={item.href}
+              onClick={() => handleScroll(item.href)}
               className="text-gray-700 text-base hover:text-[#0F2F8C] transition"
-              onClick={() => setOpenItem(false)}
             >
               {item.text}
-            </Link>
+            </button>
           ))}
           <button className="bg-[#0F2F8C] text-sm text-white rounded-full px-4 py-2.5 hover:scale-105 transition-all duration-300">
             Start Learning
           </button>
         </div>
       )}
-
     </nav>
   );
 };

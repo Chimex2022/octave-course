@@ -3,7 +3,7 @@ import heroBg from "../assets/Rectangle.png";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-black text-white">
+    <section id="" className="relative bg-black text-white">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-20"
@@ -31,7 +31,7 @@ const HeroSection = () => {
         {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row gap-4">
           <a
-            href="#apply"
+            href="https://bit.ly/Octave-TechTraining"
             className="bg-[#0F2F8C] hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition"
           >
             Apply Now
