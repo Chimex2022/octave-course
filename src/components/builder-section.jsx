@@ -25,8 +25,8 @@ const BuildersSection = () => {
   return (
     <section className="bg-black text-white py-16 px-6 lg:px-20">
       {/* Top Heading & Paragraph */}
-      <div className="max-w-5xl mx-auto text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-10">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-6 leading-wider lg:mb-0">
+      <div className="max-w-5xl mx-auto text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-10 lg:space-x-28">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-6 leading-wider lg:mb-0">
           We Exist Because The World Needs More Builders
         </h2>
         <p className="text-gray-300 leading-tighter text-sm">
