@@ -9,10 +9,12 @@ export default function Empower() {
           We equip aspiring innovators with the skills, tools, and guidance they need to create, solve problems, 
           and shape the future of technology.
         </p>
-        <button className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+        <a
+          href="https://bit.ly/Octave-TechTraining"
+          className="mt-8 bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition inline-block"
+        >
           Apply Now
-        </button>
+        </a>
       </div>
     );
   }
-  
